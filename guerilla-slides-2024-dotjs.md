@@ -28,7 +28,7 @@ So, for the last two decades, people have been trying to rewrite all existing so
 
 [comment]: # (!!!)
 
-At different times during the last few years, I did need to use three universally used libraries with very wide support that do not exist *(did not exist)* for JavaScript:
+At different times during the last few years, I did need to use three universal libraries with very wide language support that do not exist *(did not exist)* for JavaScript:
 
 * `ImageMagick`
 * `ffmpeg`
@@ -36,7 +36,7 @@ At different times during the last few years, I did need to use three universall
 
 Rewriting these in JavaScript is a monumental task.
 
-Try searching for these on `npmjs`. You will find tons of packages - most of them call the CLI tools - and are usually in a very sorry state
+Try searching for these on `npmjs`. You will find tons of packages - most of them call the CLI tools - and are usually in a very sorry state.
 
 [comment]: # (!!!)
 
