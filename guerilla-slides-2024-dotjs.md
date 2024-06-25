@@ -28,7 +28,7 @@ So, for the last two decades, people have been trying to rewrite all existing so
 
 [comment]: # (!!!)
 
-At different times during the last few years, I have needed three universally used libraries with very wide support that do not exist *(did not exist)* for JavaScript:
+At different times during the last few years, I did need to use three universally used libraries with very wide support that do not exist *(did not exist)* for JavaScript:
 
 * `ImageMagick`
 * `ffmpeg`
@@ -36,7 +36,7 @@ At different times during the last few years, I have needed three universally us
 
 Rewriting these in JavaScript is a monumental task.
 
-Try searching for these on `npmjs`. You will find tons of packages - most of them call the CLI tools - and are usually in a very sorry state.
+Try searching for these on `npmjs`. You will find tons of packages - most of them call the CLI tools - and are usually in a very sorry state
 
 [comment]: # (!!!)
 
@@ -59,7 +59,7 @@ abracadabra ImageMagick
 import { Magick } from '@abracadabra/ImageMagick';
 ```
 
-Works both in Node.js and in the browser.
+Works both in Node.js and in the browser
 
 [comment]: # (!!!)
 
@@ -122,9 +122,12 @@ Everyone's fault.
 
 Assange, whose false rape charges happened at about the same time as mine, chose to serve 5 more years and to continue his fight for justice and freedom.
 
-So do I, I am sharing with you my recipe for a good meal costing 1€.
+My decision is the same and I want to share with you my recipe for a good meal costing 1€.
 
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=XF-RHOqGz-Y&t=9s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe id="ytplayer" type="text/html" width="640" height="360"
+  src="https://www.youtube.com/embed/XF-RHOqGz-Y"
+  frameborder="0">
+</iframe>
 
 [comment]: # (!!!)
 
