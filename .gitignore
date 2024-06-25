@@ -1,1 +1,6 @@
+node_modules
 /guerilla-slides-2024-dotjs/
+
+*.gif
+*.mp4
+*.png
