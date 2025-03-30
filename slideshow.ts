@@ -3,13 +3,13 @@
 //
 // ts-node slideshow.ts gif output.gif *.png
 
-import { Magick } from 'magickwand.js';
+import { Magick } from 'magickwand.js/native';
 import ffmpeg from '@mmomtchev/ffmpeg';
 import { VideoEncoder, Muxer, Filter, VideoStreamDefinition, VideoTransform } from '@mmomtchev/ffmpeg/stream';
 
 const width = 800;
 const height = 500;
-const secondsPerSlide = 8;
+const secondsPerSlide = 15;
 const frameRate = 5;
 const formatName = process.argv[2];
 const outputFileName = process.argv[3];
@@ -21,7 +21,7 @@ function genFrame(files: string[], idx: number) {
     const imageIndex = idx / (secondsPerSlide * frameRate);
     console.log('Slide ', imageIndex);
     const image = new Magick.Image(files[imageIndex]);
-    image.resize(`${width}x${height}`);
+    image.resize(`${width}x${height}!`);
     image.magick('rgba');
     image.depth(8);
     //image.samplingFactor('4:2:0');

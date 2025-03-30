@@ -4,11 +4,11 @@
 
 ### The guerilla-slides-react-native-connection-2025
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/La_Guerra_de_Guerrillas_%28edición_de_1961%29.png" alt="Guerilla Warfare" style="height:250px;"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/La_Guerra_de_Guerrillas_%28edición_de_1961%29.png" alt="Guerilla Warfare" style="height:200px;"/>
 
 [comment]: # (!!!)
 
-<img src="C++_in_Javascript.png" alt="C++ in JavaScript" style="height:250px;"/>
+<img src="https://raw.githubusercontent.com/mmomtchev/guerilla-slides/refs/heads/main/C%2B%2B_in_Javascript.png" alt="C++ in JavaScript" style="height:70vh;"/>
 
 [comment]: # (!!!)
 
