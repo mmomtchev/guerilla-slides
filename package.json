@@ -1,8 +1,8 @@
 {
   "dependencies": {
-    "@mmomtchev/ffmpeg": "^1.0.0",
+    "@mmomtchev/ffmpeg": "^1.0.1",
     "@types/node": "^20.14.8",
-    "magickwand.js": "^1.1.0"
+    "magickwand.js": "^2.0.1"
   },
   "devDependencies": {
     "ts-node": "^10.9.2"
