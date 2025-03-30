@@ -1,5 +1,3 @@
-# Guerilla Slides
-
 # Guerilla Slides / React Native Connection 2025
 
   ## [Markdown version](https://github.com/mmomtchev/guerilla-slides/blob/main/guerilla-slides-2024-dotjs.md)
