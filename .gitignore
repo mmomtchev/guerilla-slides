@@ -1,9 +1,0 @@
-node_modules
-/guerilla-slides-2024-dotjs/
-/guerilla-slides-2025-react-native-connection/
-
-*.gif
-*.mp4
-*.png
-
-!C++_in_Javascript.png
