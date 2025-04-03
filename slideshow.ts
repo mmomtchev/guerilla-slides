@@ -9,7 +9,7 @@ import { VideoEncoder, Muxer, Filter, VideoStreamDefinition, VideoTransform } fr
 
 const width = 800;
 const height = 500;
-const secondsPerSlide = 15;
+const secondsPerSlide = 8;
 const frameRate = 5;
 const formatName = process.argv[2];
 const outputFileName = process.argv[3];
@@ -24,7 +24,7 @@ function genFrame(files: string[], idx: number) {
     image.resize(`${width}x${height}!`);
     image.magick('rgba');
     image.depth(8);
-    //image.samplingFactor('4:2:0');
+    image.samplingFactor('4:2:0');
     const blob = new Magick.Blob;
     image.write(blob);
     buffer = Buffer.from(blob.data());
@@ -68,7 +68,7 @@ const filter = new Filter({
   outputs: {
     'out': videoOutputDefinition
   },
-  graph: '[in] copy [out]; ',
+  graph: '[in] fps=10,scale=320:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse [out]; ',
   timeBase: videoOutputDefinition.timeBase
 });
 
