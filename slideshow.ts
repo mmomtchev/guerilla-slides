@@ -2,15 +2,16 @@
 // https://github.com/mmomtchev/orbitron/blob/main/src/encode.ts
 //
 // ts-node slideshow.ts gif output.gif *.png
+// ts-node slideshow.ts mp4 output.mp4 *.png
 
 import { Magick } from 'magickwand.js/native';
 import ffmpeg from '@mmomtchev/ffmpeg';
-import { VideoEncoder, Muxer, Filter, VideoStreamDefinition, VideoTransform } from '@mmomtchev/ffmpeg/stream';
+import { VideoEncoder, Muxer, Filter, VideoStreamDefinition } from '@mmomtchev/ffmpeg/stream';
 
 const width = 800;
 const height = 500;
-const secondsPerSlide = 8;
-const frameRate = 5;
+const secondsPerSlide = 1;
+const frameRate = 1;
 const formatName = process.argv[2];
 const outputFileName = process.argv[3];
 const slides = process.argv.slice(4);
@@ -24,7 +25,6 @@ function genFrame(files: string[], idx: number) {
     image.resize(`${width}x${height}!`);
     image.magick('rgba');
     image.depth(8);
-    image.samplingFactor('4:2:0');
     const blob = new Magick.Blob;
     image.write(blob);
     buffer = Buffer.from(blob.data());
@@ -35,10 +35,15 @@ function genFrame(files: string[], idx: number) {
 
 ffmpeg.setLogLevel(ffmpeg.AV_LOG_ERROR);
 
-const formatImage = new ffmpeg.PixelFormat(ffmpeg.AV_PIX_FMT_RGBA);
-const formatVideo = formatName === 'gif'
-  ? new ffmpeg.PixelFormat(ffmpeg.AV_PIX_FMT_RGB8)
+const formatIn = new ffmpeg.PixelFormat(ffmpeg.AV_PIX_FMT_RGBA);
+const formatOut = formatName === 'gif'
+  // paletteuse filter produces FMT_PAL8 (8-bit pixels with palette)
+  ? new ffmpeg.PixelFormat(ffmpeg.AV_PIX_FMT_PAL8)
   : new ffmpeg.PixelFormat(ffmpeg.AV_PIX_FMT_YUV420P);
+
+const filterChain = formatName == 'gif'
+  ? '[in] split [s0][s1]; [s0] palettegen [p]; [s1][p] paletteuse [out]; '
+  : '[in] format=yuv420p [out]; ';
 
 const timeBase = new ffmpeg.Rational(1, frameRate);
 
@@ -50,45 +55,40 @@ const videoOutputDefinition = {
   height,
   frameRate: new ffmpeg.Rational(frameRate, 1),
   timeBase,
-  pixelFormat: formatVideo
+  pixelFormat: formatOut
 } as VideoStreamDefinition;
 
-const videoOutput = new VideoEncoder(videoOutputDefinition);
-
-const xform = new VideoTransform({
-  input: { ...videoOutputDefinition, pixelFormat: formatImage },
-  output: videoOutputDefinition,
-  interpolation: ffmpeg.SWS_BILINEAR
-});
+const videoEncoder = new VideoEncoder(videoOutputDefinition);
 
 const filter = new Filter({
   inputs: {
-    'in': videoOutputDefinition
+    'in': { ...videoOutputDefinition, pixelFormat: formatIn } as VideoStreamDefinition
   },
   outputs: {
     'out': videoOutputDefinition
   },
-  graph: '[in] fps=10,scale=320:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse [out]; ',
+  graph: filterChain,
   timeBase: videoOutputDefinition.timeBase
 });
 
+// Write into Filter [in]
+// Pipe Filter [out] to VideoEncoder to Muxer
 let totalFrames = frameRate * secondsPerSlide * slides.length;
 let idx = 0;
 const write = function () {
   let frame;
   do {
     const image = genFrame(slides, idx);
-    frame = ffmpeg.VideoFrame.create(image, formatImage, width, height);
+    frame = ffmpeg.VideoFrame.create(image, formatIn, width, height);
     frame.setTimeBase(timeBase);
     frame.setPts(new ffmpeg.Timestamp(idx++, timeBase));
-  } while (xform.write(frame) && idx < totalFrames);
+  } while (filter.src['in'].write(frame) && idx < totalFrames);
   if (idx < totalFrames)
-    xform.once('drain', write);
+    filter.src['in'].once('drain', write);
   else
-    xform.end();
+    filter.src['in'].end();
 };
 
-const output = new Muxer({ outputFile: outputFileName, streams: [videoOutput] });
-xform.pipe(filter.src['in']);
-filter.sink['out'].pipe(videoOutput).pipe(output.video[0]);
+const output = new Muxer({ outputFile: outputFileName, streams: [videoEncoder] });
+filter.sink['out'].pipe(videoEncoder).pipe(output.video[0]);
 write();
