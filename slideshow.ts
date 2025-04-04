@@ -10,7 +10,7 @@ import { VideoEncoder, Muxer, Filter, VideoStreamDefinition } from '@mmomtchev/f
 
 const width = 800;
 const height = 500;
-const secondsPerSlide = 1;
+const secondsPerSlide = 8;
 const frameRate = 1;
 const formatName = process.argv[2];
 const outputFileName = process.argv[3];
@@ -68,7 +68,7 @@ const filter = new Filter({
     'out': videoOutputDefinition
   },
   graph: filterChain,
-  timeBase: videoOutputDefinition.timeBase
+  timeBase: videoOutputDefinition.timeBase!
 });
 
 // Write into Filter [in]
