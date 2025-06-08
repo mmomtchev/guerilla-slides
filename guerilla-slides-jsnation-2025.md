@@ -150,6 +150,12 @@ I chose to live on the street with almost no money instead of accepting a job in
 
 [comment]: # (!!!)
 
+I want to live in a society where employers are not allowed to use the police and the criminal justice system for extortion, where the power of the state and commercial interests stops at the doorstep of your home and where your own sexual life is no one else's business.
+
+# Who does not agree with me?
+
+[comment]: # (!!!)
+
 * SWIG JSE - https://github.com/mmomtchev/swig
 * `nobind17`- https://www.npmjs.com/package/nobind17
 * `hadron` - https://github.com/mmomtchev/hadron
