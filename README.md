@@ -1,3 +1,9 @@
+# Guerilla Slides / JSNation 2025
+
+## [Markdown version](https://github.com/mmomtchev/guerilla-slides/blob/main/guerilla-slides-jsnation-2025.md)
+
+## [HTML version](https://mmomtchev.github.io/guerilla-slides/guerilla-slides-2025-jsnation/)
+
 # Guerilla Slides / React Native Connection 2025
 
 ## [Markdown version](https://github.com/mmomtchev/guerilla-slides/blob/main/guerilla-slides-2024-dotjs.md)
