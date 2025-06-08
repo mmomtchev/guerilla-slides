@@ -3,7 +3,7 @@
     "@mmomtchev/ffmpeg": "^2.0.0-rc.0",
     "@types/node": "^20.14.8",
     "gh-pages": "^6.3.0",
-    "magickwand.js": "^2.0.1"
+    "magickwand.js": "^2.1.0-rc.0"
   },
   "devDependencies": {
     "ts-node": "^10.9.2"
