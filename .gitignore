@@ -6,5 +6,6 @@ node_modules
 *.gif
 *.mp4
 *.png
+!/memes/*.png
 
 !C++_in_Javascript.png

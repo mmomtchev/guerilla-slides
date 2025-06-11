@@ -35,3 +35,9 @@
   ![GIF](https://mmomtchev.github.io/guerilla-slides/guerilla-slides-2024-dotjs.gif)
 
 ## [HTML version](https://mmomtchev.github.io/guerilla-slides/guerilla-slides-2024-dotjs/)
+
+# Memes related my affair
+
+A collection of funny memes related to this affair
+
+ [Memes](https://github.com/mmomtchev/guerilla-slides/memes)
