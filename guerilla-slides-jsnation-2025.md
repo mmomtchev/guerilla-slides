@@ -142,17 +142,59 @@ ImageMagick comes prebuilt with more than 20 libraries - on Linux, macOS and Win
 
 [comment]: # (!!!)
 
+How about doing this the other way around?
+
+Transparent interaction with JavaScript from C++?
+
+```cpp
+try {
+  Napi::Platform platform;
+  Napi::PlatformEnv env(platform);
+  Napi::Function require =
+    env.Global().Get("require").As<Napi::Function>();
+  Napi::Object axios =
+    require({Napi::String::New(env, "axios")}).ToObject();
+  Napi::Promise r = axios.Get("get").As<Napi::Function>()
+    .MakeCallback(env.Global(), 
+    {Napi::String::New(env, "https://www.github.com")})
+    .As<Napi::Promise>();
+} catch (const Napi::Error &e) {
+  fprintf(stderr, "Caught a JS exception: %s\n", e.what());
+  return -1;
+}
+```
+
+[comment]: # (!!!)
+
+This was one of the most requested Node API features - ability to `require` and `import` `npm` modules from C++.
+
+I created `libnode` in 2023 as Google Summer of Code project - right before the start of the open hostilities between me and Google.
+
+Alas, the PR is currently frozen as I was blocked from accessing the Node.js repositories in September 2023 after refusing to stop talking about the French police involvement in my affair. It does not work beyond Node 18.x.
+
+[comment]: # (!!!)
+
+The project is currently available as an Ubuntu package but has not been updated since Ubuntu 22.04.
+
+It works reasonably well and it is used by at least one other opensource project. 
+
+It is targeted mostly at server-side C++ applications which must support user JavaScript plugins.
+
+It features automatic `Promise` resolution from C++ and supports loading and calling both synchronous and asynchronous JavaScript functions from CJS and ES6 modules.
+
+[comment]: # (!!!)
+
 I am unemployed and homeless software engineer living on the street on social welfare and working full-time on open source in my van using solar panels.
 
 I am currently the target of a huge extortion, that involves many of the largest IT companies in the world - including Google, X, Microsoft and Facebook - as well as the French police - about a series of irregular criminal and civil cases with sexual motivation.
 
-I chose to live on the street with almost no money instead of accepting a job in a criminal company willing to help cover up this affair since I consider this to be a more meaningful use of my life.
+After covering up false rape charges against me, my employers trying to convince me that I suffer from psychosis using subliminal messages with sexual content at my workplace.
 
 [comment]: # (!!!)
 
-I want to live in a society where employers are not allowed to use the police and the criminal justice system for extortion, where the power of the state and commercial interests stops at the doorstep of your home and where your own sexual life is no one else's business.
+I chose to live on the street with almost no money instead of accepting a job in a criminal company willing to help cover up this affair since I consider this to be a more meaningful use of my life.
 
-# Who does not agree with me?
+I want to live in a society where employers are not allowed to use the police and the criminal justice system for extortion, where the power of the state and commercial interests stops at the doorstep of your home and where your own sexual life is no one else's business.
 
 [comment]: # (!!!)
 
@@ -163,6 +205,7 @@ I want to live in a society where employers are not allowed to use the police an
 * `gdal-async` - https://www.npmjs.com/package/gdal-async
 * `node-ffmpeg` - https://www.npmjs.com/package/@mmomtchev/ffmpeg
 * `proj.js` - https://www.npmjs.com/package/proj.js
+* `libnode` - https://github.com/mmomtchev/libnode
 
 [comment]: # (!!!)
 
