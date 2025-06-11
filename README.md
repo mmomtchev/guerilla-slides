@@ -40,4 +40,4 @@
 
 A collection of funny memes related to this affair
 
- [Memes](https://github.com/mmomtchev/guerilla-slides/memes)
+ [Memes](https://github.com/mmomtchev/guerilla-slides/tree/main/memes)
