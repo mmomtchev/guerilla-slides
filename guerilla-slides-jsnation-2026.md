@@ -6,11 +6,7 @@
 
 [comment]: # (!!!)
 
-<img src="https://raw.githubusercontent.com/mmomtchev/guerilla-slides/refs/heads/main/short_wrappers.png" alt="short wrappers" style="height:70vh;"/>
-
-[comment]: # (!!!)
-
-<img src="../short_wrappers.png" alt="short wrappers" style="width:70vw;"/>
+<img src="https://raw.githubusercontent.com/mmomtchev/guerilla-slides/refs/heads/main/short_wrappers.png" alt="short wrappers" style="width:90vw;"/>
 
 [comment]: # (!!!)
 
@@ -41,9 +37,11 @@ WASM was supposed to bridge this gap between existing C/C++ software and the new
 [comment]: # (!!!)
 
 Everyone hates WASM:
-* Developers find it very laborious and cumbersome to use
-* Project managers see technical risks
+* Developers find it very cumbersome to use
+* Project managers see the technical risks
 * Product owners fear the compatibility issues
+
+All of them feel that WASM is still not ready.
 
 [comment]: # (!!!)
 
@@ -245,6 +243,6 @@ I want to live in a society where employers are not allowed to use the police an
 
 [comment]: # (!!!)
 
-# Short wrappers are more agile
+### Short wrappers are more agile
 
 <img src="https://i.kym-cdn.com/photos/images/newsfeed/001/553/629/3c9.jpg" alt="All your base are belong to us" style="height:500px;"/>

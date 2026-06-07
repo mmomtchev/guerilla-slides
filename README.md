@@ -1,3 +1,13 @@
+# Guerilla Slides / JSNation 2026
+
+## [Markdown version](https://github.com/mmomtchev/guerilla-slides/blob/main/guerilla-slides-jsnation-2026.md)
+
+## GIF version
+
+  ![GIF](https://mmomtchev.github.io/guerilla-slides/guerilla-slides-2026-jsnation.gif)
+
+## [HTML version](https://mmomtchev.github.io/guerilla-slides/guerilla-slides-2026-jsnation/)
+
 # Guerilla Slides / JSNation 2025
 
 ## [Markdown version](https://github.com/mmomtchev/guerilla-slides/blob/main/guerilla-slides-jsnation-2025.md)
