@@ -53,6 +53,10 @@ This is what I call WASM's last mile.
 
 [comment]: # (!!!)
 
+<img src="https://raw.githubusercontent.com/mmomtchev/guerilla-slides/refs/heads/main/make_C++_great.webp" alt="make C++ great" style="height:80vh;"/>
+
+[comment]: # (!!!)
+
 ## The Holy Grail of JavaScript/C++ interoperability
 
 What if you could simply do:
@@ -172,7 +176,7 @@ Now you can simply use
 npm install magickwand.js
 ```
 
-and then use the C++ software as you would be using any other JavaScript library - as native code when running on the backend or as WASM when running in the browser!
+and then use the C++ software as you would be using any other JavaScript library - as native code when running on the backend or as WASM when running in the browser through a web bundler!
 
 [comment]: # (!!!)
 
@@ -218,17 +222,42 @@ It features automatic `Promise` resolution from C++ and supports loading and cal
 
 [comment]: # (!!!)
 
+### Who am I
+
 I am unemployed and homeless software engineer living on the street on social welfare and working full-time on open source in my van using solar panels.
 
-I am currently the target of a huge extortion, that involves many of the largest IT companies in the world - including Google, X, Microsoft and Facebook - as well as the French police - about a series of irregular criminal and civil cases with sexual motivation.
-
-After covering up false rape charges against me, my employers trying to convince me that I suffer from psychosis using subliminal messages with sexual content at my workplace.
+I am here to both promote my open-source software - which most of the companies try to ignore for obvious reasons - and to raise awareness of my affair.
 
 [comment]: # (!!!)
 
-I chose to live on the street with almost no money instead of accepting a job in a criminal company willing to help cover up this affair since I consider this to be a more meaningful use of my life.
+### The affair in a nutshell
 
-I want to live in a society where employers are not allowed to use the police and the criminal justice system for extortion, where the power of the state and commercial interests stops at the doorstep of your home and where your own sexual life is no one else's business.
+* A mentally-disturbed employer tried to intervene in my sex life believing that he was going to make me work for cheap
+* After it didn't really work out, he got the French police involved with a series of false rape charges
+* After this didn't work either, he got my next employer involved trying to at least embarrass me to stop talking about the affair with various horrible sexual games
+
+[comment]: # (!!!)
+
+* After this didn't work out, he tried convincing me that I suffered from a psychosis
+* It didn't work out, so he simply reached an agreement with my lawyers, police and the judges to stop any criminal proceedings to buy more time
+* Then he tried extorting me to shut up - involving GAFAM companies as well as many large open-source projects
+* Finally, he got my evicted from my home - by now all French government institutions have been involved and everything seems to be possible
+
+[comment]: # (!!!)
+
+### My goal
+
+Since I have lost so much, it is unconceivable that I will ever accept any form of settlement - or that I will simply back off.
+
+By now the whole affair has a political dimension to it, and I want to use my remaining life to raise awareness of the privacy abuses in Big Tech and fight for new regulations to curb them.
+
+**If it is possible to get GAFAM to cooperate in a criminal extortion over a sexual affair, is there anything that is not?**
+
+[comment]: # (!!!)
+
+## The biggest threat of AI is not people losing their jobs, AI still cannot do this
+
+## The biggest threat of AI is authoritarian government and new feudal Middle Ages because AI can totally do this
 
 [comment]: # (!!!)
 
