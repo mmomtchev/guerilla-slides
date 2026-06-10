@@ -53,7 +53,7 @@ This is what I call WASM's last mile.
 
 [comment]: # (!!!)
 
-<img src="https://raw.githubusercontent.com/mmomtchev/guerilla-slides/refs/heads/main/make_C++_great.webp" alt="make C++ great" style="height:80vh;"/>
+<img src="https://raw.githubusercontent.com/mmomtchev/guerilla-slides/refs/heads/main/make_C++_great.webp" alt="make C++ great" style="height:70vh;"/>
 
 [comment]: # (!!!)
 
